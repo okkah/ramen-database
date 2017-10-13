@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=shift_jis" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<link rel="stylesheet" href="css/bootstrap.css"></link>
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/themes/ui-lightness/jquery-ui.css">
+<link rel="stylesheet" href="bootstrap-responsive.css"></link>
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/themes/ui-lightness/jquery-ui.css">
+<link rel="stylesheet" href="css/demo.css"></link>
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>ラーメンデータベース</title>
+<meta name="copyright" content="Template Party" />
+<meta name="description" content="ここにサイト説明を入れます" />
+<meta name="keywords" content="キーワード１,キーワード２,キーワード３,キーワード４,キーワード５" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/script.js"></script>
+</head>
+<body>
+
+<div id="container">
+
+<div id="header">
+<h1><a href="index.html">彌冨研究室B3 岡本秀明 ＆ 音賀優颯</a></h1>
+<img src="images/mainimg.jpg" alt="" width="1000" height="398" />
+<img src="images/banner.jpg" alt="" width="540" height="100" id="banner" />
+</div>
+<!--/header-->
+
+<ul id="menu">
+<li><a href="index.html"><img src="images/menu_01.gif" alt="トップページ" width="180" height="60" id="Image1" onmouseover="MM_swapImage('Image1','','images/menu_over_01.gif',0)" onmouseout="MM_swapImgRestore()" /></a></li>
+<li><a href="1.html"><img src="images/menu_02.gif" alt="メニューリスト" width="180" height="60" id="Image2" onmouseover="MM_swapImage('Image2','','images/menu_over_02.gif',0)" onmouseout="MM_swapImgRestore()" /></a></li>
+<li><a href="2.html"><img src="images/menu_03.gif" alt="ショップ所在地" width="180" height="60" id="Image3" onmouseover="MM_swapImage('Image3','','images/menu_over_03.gif',0)" onmouseout="MM_swapImgRestore()" /></a></li>
+<li><a href="3.html"><img src="images/menu_04.gif" alt="スタッフブログ" width="180" height="60" id="Image4" onmouseover="MM_swapImage('Image4','','images/menu_over_04.gif',0)" onmouseout="MM_swapImgRestore()" /></a></li>
+<li class="last"><a href="4.html"><img src="images/menu_05.gif" alt="リンク集" width="180" height="60" id="Image5" onmouseover="MM_swapImage('Image5','','images/menu_over_05.gif',0)" onmouseout="MM_swapImgRestore()" /></a></li>
+</ul>
+
+<div id="main">
+
+<h2>自己紹介</h2>
+<p><b>・岡本秀明（おっかー）</b><br>
+<img src="images/okkah.jpg" width="130" height="130"><br><br>
+ラーメンをこよなく愛し、都内を中心に食べ歩いてます。<br>ラーメン好きになったきっかけは高校の近くにある武蔵家です。<br>サイトで紹介しているラーメンの写真は全て自分で撮影しました。<br>究極の一杯を探し求めることが夢です。<br><br>
+
+<b>・音賀優颯（わさび）</b><br>
+<img src="images/wasabi.png" width="130" height="130"><br><br>
+高校まではサッカーをやってましたが、現在では太陽の下にいることが苦痛でなりません。<br>冷房がないと生きていけません。とにかく暑いのが苦手です。<br>ラーメンは好きですが、あんまり食べません。細麺が好きです。あっさり系が好きです。<br>家系？時々食べますね。去年の冬に次郎へ行ったので、あと半年は食べなくても大丈夫。<br><br></p>
+
+<h2>カップ麺食べちゃう？</h2>
+<br><div Align="center"><input type="button" value="カップ麺タイマー" onclick="window.open('timer.html' , 'noodles' , 'width=300,height=250')"></div><br><br><br>
+
+<h2>ヒガコでラーメン食べちゃう？</h2>
+<br>
+<div class="container">
+<div class="roulette_container" >
+<div class="roulette" style="display:none;">
+<img src="images/ippei.jpg" >
+<img src="images/kujira.jpg">
+<img src="images/dai.jpg">
+<img src="images/tarikiya.jpg">
+<img src="images/musashiyahigako.jpg">
+<img src="images/heiemon.jpg">
+</div>
+</div>
+<div class="btn_container">
+<p>
+<button class="btn btn-large btn-primary start"> START </button>
+<button class="stop btn-large btn btn-warning" onclick="GetRandomNumber();"> STOP </button>
+</p>
+</div>		
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/jquery-ui.min.js"></script>
+<script src="js/roulette.js"></script>
+<script>
+jQuery(function(){    
+// initialize!
+var option = {
+	speed : 7,
+	 duration : 100,
+}
+$('div.roulette').roulette(option);	
+ 
+// START!
+$('.start').click(function(){
+	$('div.roulette').roulette('start');	
+});
+ 
+// STOP!
+$('.stop').click(function(){
+	$('div.roulette').roulette('stop');	
+});
+});
+ 
+ </script>
+</div>
+<!--/main-->
+
+<div id="footer">
+Copyright&copy; 2017 <a href="index.html">彌冨研究室B3 岡本秀明 ＆ 音賀優颯</a> All Rights Reserved.<br />
+<span class="pr"><a href="http://template-party.com/" target="_blank">Web Design: Okkah</a></span>
+</div>
+<!--/footer-->
+
+</div>
+<!--/container-->
+
+</body>
+</html>

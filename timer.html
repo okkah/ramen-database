@@ -1,0 +1,43 @@
+<html>
+<head>
+<script type="text/javascript"><!--
+myCnt = 0;
+myTim = 0;
+ 
+function myGo(){
+mySelect = document.myForm.myMenu.selectedIndex;
+myCnt = eval ( document.myForm.myMenu.options[mySelect].value );
+myTim = setInterval ( "myTimer()", 1000 );
+}
+ 
+function myTimer(){
+myCnt = myCnt - 1;
+document.getElementById( "countdown" ).innerHTML = "食べ頃まで あと " + myCnt + " 秒 です。";
+if ( myCnt == 0 ){
+clearInterval( myTim );
+alert( "ラーメン食べ頃だよ！！" );
+}
+}
+// --></script>
+</head>
+<body>
+<form name="myForm">
+<div align="center">
+<strong>カップ麺タイマー</strong><BR><BR>
+<select name="myMenu">
+<option value="180">好みの時間を選んでね </option>
+<option value="600">１０分 </option>
+<option value="300">５分 </option>
+<option value="240">４分 </option>
+<option value="180">３分 </option>
+<option value="120">２分 </option>
+<option value="60">１分 </option>
+<option value="30">３０秒 </option>
+<option value="5">５秒 </option>
+</select> <input type="button" value="GO!" onclick="myGo()"><BR><BR>
+<SPAN ID="countdown">時間を選んで GO!</SPAN><BR><BR>
+<input type="button" value="閉じる" onclick="window.close()">
+</div>
+</form>
+</body>
+</html>
